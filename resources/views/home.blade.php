@@ -12,15 +12,44 @@
 
   <body>
     <h1>Trains</h1>
-    <ul>
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Train ID</th>
+          <th>Agenzia</th>
+          <th>Stazione di partenza</th>
+          <th>Stazione di arrivo</th>
+          <th>Orario di partenza</th>
+          <th>Orario di arrivo</th>
+          <th>Codice treno</th>
+          <th>Numero carrozze</th>
+          <th>In orario</th>
+          <th>Cancellato</th>
 
-      @forelse($trains as $train)
+        </tr>
+      </thead>
+      <tbody>
+        @forelse($trains as $train)
+        <tr>
+        <td>{{$train->id}}</td>
 
-        <li>{{ $train->Stazione_di_arrivo }}</li>
-
-      @endforelse
-      
-    </ul>
+          <td>{{$train->Azienda}}</td>
+          <td>{{$train->Stazione_di_partenza}}</td>
+          <td>{{$train->Stazione_di_arrivo}}</td>
+          <td>{{$train->Orario_di_partenza}}</td>
+          <td>{{$train->Orario_di_arrivo}}</td>
+          <td>{{$train->Codice_treno}}</td>
+          <td>{{$train->Numero_di_carrozze}}</td>
+          <td>{{$train->In_orario}}</td>
+          <td>{{$train->Cancellato}}</td>
+        </tr>
+        @empty
+        <tr>
+          <td colspan="100%">no trains</td>
+        </tr>
+        @endforelse
+      </tbody>
+    </table>
   </body>
 
 </html>
