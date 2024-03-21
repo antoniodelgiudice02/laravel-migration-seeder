@@ -11,7 +11,16 @@
   </head>
 
   <body>
-    <h1>Laravel with Bootstrap + Vite</h1>
+    <h1>Trains</h1>
+    <ul>
+
+      @forelse($trains as $train)
+
+        <li>{{ $train->Stazione_di_arrivo }}</li>
+
+      @endforelse
+      
+    </ul>
   </body>
 
 </html>
